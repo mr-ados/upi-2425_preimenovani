@@ -8,7 +8,6 @@ console.log(initializeApp); // Provjera firebase modula
 const App = () => {
   return (
     <div>
-      <h1>Dobrodošli u moju aplikaciju</h1>
       <Login />
     </div>
   );
