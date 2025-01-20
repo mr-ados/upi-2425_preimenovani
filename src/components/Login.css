@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-container, .menu-container, .details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    flex-direction: column;
+    background-color: lightblue;
+}
+
+.login-container input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border-radius: 50px;
+}
+
+.login-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.menu-list {
+    width: 50%;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.menu-item p {
+    margin: 5px 0;
+}
+
+.menu-item p span {
+    font-weight: bold;
+}
+
+.menu-item p .open {
+    color: green;
+}
+
+.menu-item p .closed {
+    color: red;
+}
+
+.menu-item h3 {
+    margin: 0;
+}
+
+.balance-container {
+    width: 40%;
+    text-align: center;
+}
+
+.balance-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.details-container {
+    text-align: center;
+}
+
+.details-container h2, .details-container p {
+    margin: 10px 0;
+}
+
+.details-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
