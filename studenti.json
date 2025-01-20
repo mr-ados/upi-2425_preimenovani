@@ -1,0 +1,49 @@
+{
+    "students": {
+      "UID1": {
+        "jmbag": "123456789",
+        "balance": 200.00
+      },
+      "UID2": {
+        "jmbag": "987654321",
+        "balance": 150.00
+      }
+    },
+    "menus": {
+      "menu1": {
+        "name": "Dnevni meni",
+        "items": {
+          "soup": {
+            "name": "Juha",
+            "price": 15.00
+          },
+          "main_course": {
+            "name": "Glavno jelo",
+            "price": 35.00
+          },
+          "dessert": {
+            "name": "Desert",
+            "price": 20.00
+          }
+        }
+      },
+      "menu2": {
+        "name": "Večernji meni",
+        "items": {
+          "salad": {
+            "name": "Salata",
+            "price": 12.00
+          },
+          "main_course": {
+            "name": "Glavno jelo",
+            "price": 40.00
+          },
+          "drink": {
+            "name": "Piće",
+            "price": 10.00
+          }
+        }
+      }
+    }
+  }
+  

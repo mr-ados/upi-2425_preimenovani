@@ -1,16 +1,21 @@
-// src/App.jsx
+// src/App.js
 import React from "react";
-import { initializeApp } from "firebase/app";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Login from "./components/Login";
-
-console.log(initializeApp); // Provjera firebase modula
+import StudentProfile from "./components/StudentProfile";
 
 const App = () => {
   return (
-    <div>
-      <h1>Dobrodošli u moju aplikaciju</h1>
-      <Login />
-    </div>
+    <Router>
+      <div>
+        <h1>Dobrodošli u aplikaciju Menza</h1>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/student-profile" element={<StudentProfile />} />
+          <Route path="/" element={<Navigate to="/login" />} /> {/* Dodajte ovu liniju */}
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
