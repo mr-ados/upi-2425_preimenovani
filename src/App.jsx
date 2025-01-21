@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Login from "./components/Login";
 import StudentProfile from "./components/StudentProfile";
+import AdminDashboard from "./components/AdminDashboard";
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/student-profile" element={<StudentProfile />} />
-          <Route path="/" element={<Navigate to="/login" />} /> {/* Dodajte ovu liniju */}
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
       </div>
     </Router>
