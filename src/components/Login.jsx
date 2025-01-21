@@ -2,20 +2,27 @@
 import React, { useState } from "react";
 import { auth } from "../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom"; // Ažurirajte uvoz
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Koristite useNavigate
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      console.log("Prijava uspješna, UID:", user.uid);
+      const uid = user.uid;
+
+      if (uid === "6wzWtXrjqjTghE6E704N5cOmpLF2") {
+        navigate('/admin'); // Preusmjeravanje na admin stranicu
+      } else {
+        navigate('/student-profile'); // Preusmjeravanje na student profil stranicu
+      }
+
+      console.log("Prijava uspješna, UID:", uid);
       alert("Prijava uspješna");
-      navigate('/student-profile'); // Preusmjeravanje na student profil stranicu
     } catch (error) {
       console.error("Greška pri prijavi: ", error);
       alert("Prijava nije uspjela");
