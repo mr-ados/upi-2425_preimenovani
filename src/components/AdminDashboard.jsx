@@ -1,7 +1,7 @@
 // src/components/AdminDashboard.js
 import React, { useState, useEffect } from "react";
 import { database } from "../firebaseConfig";
-import { ref, onValue, update, remove, get } from "firebase/database";
+import { ref, onValue, update, remove, get, push } from "firebase/database";
 
 const AdminDashboard = () => {
   const [menuItems, setMenuItems] = useState({});
@@ -60,7 +60,20 @@ const AdminDashboard = () => {
       if (studentsData) {
         const updates = {};
         for (const studentId in studentsData) {
+          const currentBalance = studentsData[studentId].balance;
+          const difference = 200 - currentBalance;
+
+          // Ažuriraj stanje računa
           updates[`/students/${studentId}/balance`] = 200;
+          
+          // Dodaj transakciju za svakog studenta
+          const transactionsRef = ref(database, `students/${studentId}/transactions`);
+          const newTransactionRef = push(transactionsRef);
+          updates[`/students/${studentId}/transactions/${newTransactionRef.key}`] = {
+            amount: difference,
+            date: new Date().toISOString().split('T')[0], // Formatirano kao YYYY-MM-DD
+            description: 'Resetiranje stanja računa'
+          };
         }
 
         await update(ref(database), updates);
