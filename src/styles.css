@@ -1,0 +1,90 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #2c3e50; /* Tamnija pozadina za bolji kontrast */
+  color: #ecf0f1; /* Svjetliji tekst za bolji kontrast */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Omogućava centriranje po vertikali */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1abc9c; /* Svjetlija boja pozadine za gumb */
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profileButton {
+  background-color: #e74c3c; /* Kontrastna boja za gumb */
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  position: fixed;
+  top: 10px;
+  right: 10px; /* Pozicioniranje gumba u gornjem desnom kutu */
+}
+
+.profileButton:hover {
+  background-color: #c0392b;
+}
+
+.container {
+  margin-top: 80px; /* Adjust margin for header space */
+  padding: 20px;
+  width: 90%;
+  max-width: 800px; /* Ograničavanje širine za bolji prikaz */
+  background-color: #34495e;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Poboljšana sjena za bolji izgled */
+}
+
+button {
+  background-color: #e74c3c; /* Kontrastna boja za gumb */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #2c3e50; /* Boja pozadine za stavke u listi */
+  border-radius: 4px;
+  color: #ecf0f1;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center; /* Centrira tekst naslova */
+}

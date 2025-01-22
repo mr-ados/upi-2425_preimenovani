@@ -1,18 +1,12 @@
 // src/components/AdminDashboard.js
 import React, { useState, useEffect } from "react";
 import { database } from "../firebaseConfig";
-import { ref, onValue, update, remove } from "firebase/database";
+import { ref, onValue, update, remove, get } from "firebase/database";
 
 const AdminDashboard = () => {
-  const [menuItems, setMenuItems] = useState([]);
-  const [selectedMenu, setSelectedMenu] = useState("");
+  const [menuItems, setMenuItems] = useState({});
+  const [selectedMenu, setSelectedMenu] = useState({});
   const [selectedMenza, setSelectedMenza] = useState("");
-  const [menuCategories, setMenuCategories] = useState({
-    desert: [],
-    glavnaJela: [],
-    pice: [],
-    predjela: []
-  });
 
   useEffect(() => {
     const menuRef = ref(database, 'menu');
@@ -57,8 +51,31 @@ const AdminDashboard = () => {
     }
   };
 
+  const handleResetStudentBalances = async () => {
+    try {
+      const studentsRef = ref(database, 'students');
+      const snapshot = await get(studentsRef);
+      const studentsData = snapshot.val();
+
+      if (studentsData) {
+        const updates = {};
+        for (const studentId in studentsData) {
+          updates[`/students/${studentId}/balance`] = 200;
+        }
+
+        await update(ref(database), updates);
+        alert("Stanja računa uspješno resetirana na 200!");
+      } else {
+        alert("Nema podataka o studentima.");
+      }
+    } catch (error) {
+      console.error("Greška pri resetiranju stanja računa: ", error);
+      alert("Resetiranje stanja računa nije uspjelo");
+    }
+  };
+
   return (
-    <div>
+    <div className="container">
       <h1>Admin Dashboard</h1>
       <div>
         <h2>Dodaj stavku na jelovnik</h2>
@@ -74,7 +91,7 @@ const AdminDashboard = () => {
           <select onChange={(e) => handleSelectChange(e, "desert")} value={selectedMenu.desert || ""}>
             <option value="">Odaberite desert</option>
             {Object.keys(menuItems.desert || {}).map((key) => (
-              <option key={key} value={menuItems.desert[key]}>{menuItems.desert[key]}</option>
+              <option key={key} value={key}>{key}</option>
             ))}
           </select>
         </div>
@@ -84,7 +101,7 @@ const AdminDashboard = () => {
           <select onChange={(e) => handleSelectChange(e, "glavnoJelo")} value={selectedMenu.glavnoJelo || ""}>
             <option value="">Odaberite glavno jelo</option>
             {Object.keys(menuItems.glavnaJela || {}).map((key) => (
-              <option key={key} value={menuItems.glavnaJela[key]}>{menuItems.glavnaJela[key]}</option>
+              <option key={key} value={key}>{key}</option>
             ))}
           </select>
         </div>
@@ -94,7 +111,7 @@ const AdminDashboard = () => {
           <select onChange={(e) => handleSelectChange(e, "pice")} value={selectedMenu.pice || ""}>
             <option value="">Odaberite piće</option>
             {Object.keys(menuItems.pice || {}).map((key) => (
-              <option key={key} value={menuItems.pice[key]}>{menuItems.pice[key]}</option>
+              <option key={key} value={key}>{key}</option>
             ))}
           </select>
         </div>
@@ -104,13 +121,14 @@ const AdminDashboard = () => {
           <select onChange={(e) => handleSelectChange(e, "predjelo")} value={selectedMenu.predjelo || ""}>
             <option value="">Odaberite predjelo</option>
             {Object.keys(menuItems.predjela || {}).map((key) => (
-              <option key={key} value={menuItems.predjela[key]}>{menuItems.predjela[key]}</option>
+              <option key={key} value={key}>{key}</option>
             ))}
           </select>
         </div>
 
         <button onClick={handleAddToMenza}>Dodaj stavku</button>
         <button onClick={handleDeleteFromMenza}>Obriši stavku</button>
+        <button onClick={handleResetStudentBalances}>Resetiraj stanje računa</button>
       </div>
     </div>
   );
