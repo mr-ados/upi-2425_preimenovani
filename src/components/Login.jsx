@@ -18,7 +18,7 @@ const Login = () => {
       if (uid === "6wzWtXrjqjTghE6E704N5cOmpLF2") {
         navigate('/admin'); // Preusmjeravanje na admin stranicu
       } else {
-        navigate('/student-profile'); // Preusmjeravanje na student profil stranicu
+        navigate('/student-dashboard'); // Preusmjeravanje na student dashboard stranicu
       }
 
       console.log("Prijava uspješna, UID:", uid);
