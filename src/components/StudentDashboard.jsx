@@ -1,7 +1,7 @@
 // src/components/StudentDashboard.js
 import React, { useState, useEffect } from "react";
 import { database, auth } from "../firebaseConfig";
-import { ref, onValue, update } from "firebase/database";
+import { ref, onValue, update, push } from "firebase/database";
 import '../styles.css';
 
 const StudentDashboard = () => {
@@ -60,6 +60,16 @@ const StudentDashboard = () => {
 
     try {
       await update(studentRef, { balance: updatedBalance });
+
+      // Dodaj transakciju
+      const transactionsRef = ref(database, 'students/' + auth.currentUser.uid + '/transactions');
+      const newTransactionRef = push(transactionsRef);
+      await update(newTransactionRef, {
+        amount: -totalPrice,
+        date: new Date().toISOString().split('T')[0], // Formatirano kao YYYY-MM-DD
+        description: `Kupnja menija u menzi ${menzaKey}`
+      });
+
       alert("Kupnja uspješna!");
     } catch (error) {
       console.error("Greška pri ažuriranju stanja računa: ", error);

@@ -88,3 +88,11 @@ h2 {
   margin-top: 0;
   text-align: center; /* Centrira tekst naslova */
 }
+
+.transactionBox {
+  max-height: 200px; /* Postavite maksimalnu visinu za kutiju */
+  overflow-y: auto; /* Omogućite vertikalno skrolanje */
+  border: 1px solid #7f8c8d; /* Dodajte obrub kako bi kutija bila vidljivija */
+  padding: 10px;
+  margin-top: 20px;
+}
