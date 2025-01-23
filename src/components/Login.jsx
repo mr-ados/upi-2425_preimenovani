@@ -1,8 +1,8 @@
-// src/components/Login.js
 import React, { useState } from "react";
 import { auth } from "../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import './Login.css'; // Import the CSS file
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +30,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login-container container">
       <h1>Login</h1>
       <input
         type="email"

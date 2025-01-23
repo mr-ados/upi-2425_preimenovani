@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { database, auth } from "../firebaseConfig";
 import { ref, onValue, update, push } from "firebase/database";
-import '../styles.css';
+
 
 const StudentDashboard = () => {
   const [menzaData, setMenzaData] = useState({});
