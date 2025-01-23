@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { database } from "../firebaseConfig";
 import { ref, onValue, update, remove, get, push } from "firebase/database";
+import './Login.css'; // Import the CSS file
 
 const AdminDashboard = () => {
   const [menuItems, setMenuItems] = useState({});
@@ -139,9 +140,12 @@ const AdminDashboard = () => {
           </select>
         </div>
 
-        <button onClick={handleAddToMenza}>Dodaj stavku</button>
-        <button onClick={handleDeleteFromMenza}>Obriši stavku</button>
-        <button onClick={handleResetStudentBalances}>Resetiraj stanje računa</button>
+        <div className="container">
+          <h2>Admin Dashboard</h2>
+          <button className="menu-button" onClick={handleAddToMenza}>Dodaj stavku</button>
+          <button className="menu-button" onClick={handleDeleteFromMenza}>Obriši stavku</button>
+          <button className="menu-button" onClick={handleResetStudentBalances}>Resetiraj stanje računa</button>
+        </div>
       </div>
     </div>
   );

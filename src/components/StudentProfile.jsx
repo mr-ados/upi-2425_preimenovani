@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { database, auth } from "../firebaseConfig";
 import { ref, onValue, remove } from "firebase/database";
 import { useNavigate } from "react-router-dom";
-import "../styles.css";
+import './Login.css'; // Import the CSS file
 
 const StudentProfile = () => {
   const [studentData, setStudentData] = useState(null);
