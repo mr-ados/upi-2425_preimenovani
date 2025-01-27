@@ -1,4 +1,3 @@
-// src/components/AdminDashboard.js
 import React, { useState, useEffect } from "react";
 import { database } from "../firebaseConfig";
 import { ref, onValue, update, remove, get, push } from "firebase/database";
@@ -19,13 +18,16 @@ const AdminDashboard = () => {
 
   const handleSelectChange = (event, type) => {
     setSelectedMenu((prev) => ({ ...prev, [type]: event.target.value }));
+    console.log(`Selected ${type}:`, event.target.value);
   };
 
   const handleMenzaChange = (event) => {
     setSelectedMenza(event.target.value);
+    console.log('Selected menza:', event.target.value);
   };
 
   const handleAddToMenza = async () => {
+    console.log('Adding to menza:', selectedMenza, selectedMenu);
     try {
       const menzaRef = ref(database, `menza/${selectedMenza}`);
       await update(menzaRef, {
@@ -112,7 +114,7 @@ const AdminDashboard = () => {
 
         <div>
           <h3>Glavna Jela</h3>
-          <select onChange={(e) => handleSelectChange(e, "glavnoJelo")} value={selectedMenu.glavnoJelo || ""}>
+          <select aria-label="odaberite glavno jelo" onChange={(e) => handleSelectChange(e, "glavnoJelo")} value={selectedMenu.glavnoJelo || ""}>
             <option value="">Odaberite glavno jelo</option>
             {Object.keys(menuItems.glavnaJela || {}).map((key) => (
               <option key={key} value={key}>{key}</option>
@@ -122,7 +124,7 @@ const AdminDashboard = () => {
 
         <div>
           <h3>Piće</h3>
-          <select onChange={(e) => handleSelectChange(e, "pice")} value={selectedMenu.pice || ""}>
+          <select aria-label="odaberite piće" onChange={(e) => handleSelectChange(e, "pice")} value={selectedMenu.pice || ""}>
             <option value="">Odaberite piće</option>
             {Object.keys(menuItems.pice || {}).map((key) => (
               <option key={key} value={key}>{key}</option>
@@ -132,7 +134,7 @@ const AdminDashboard = () => {
 
         <div>
           <h3>Predjelo</h3>
-          <select onChange={(e) => handleSelectChange(e, "predjelo")} value={selectedMenu.predjelo || ""}>
+          <select aria-label="odaberite predjelo" onChange={(e) => handleSelectChange(e, "predjelo")} value={selectedMenu.predjelo || ""}>
             <option value="">Odaberite predjelo</option>
             {Object.keys(menuItems.predjela || {}).map((key) => (
               <option key={key} value={key}>{key}</option>

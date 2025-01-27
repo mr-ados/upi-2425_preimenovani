@@ -1,4 +1,3 @@
-// src/components/StudentProfile.js
 import React, { useState, useEffect } from "react";
 import { database, auth } from "../firebaseConfig";
 import { ref, onValue, remove } from "firebase/database";
@@ -62,7 +61,7 @@ const StudentProfile = () => {
       <h1>Student Profil</h1>
       {studentData ? (
         <>
-          <p>UID: {studentData.UID}</p>
+          <p>Ime: {studentData.ime}</p>
           <p>JMBAG: {studentData.jmbag}</p>
           <p>Stanje računa: {studentData.balance} kn</p>
           <h2>Povijest transakcija</h2>

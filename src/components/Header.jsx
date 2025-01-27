@@ -8,9 +8,14 @@ const Header = () => {
   return (
     <header className="header container">
       <h1>Dobrodošli u aplikaciju Menza</h1>
-      {location.pathname !== '/login' && location.pathname !== '/admin' && (
-        <Link to="/student-profile" className="profileButton">Student Profile</Link>
-      )}
+      <nav>
+        {location.pathname !== '/login' && location.pathname !== '/admin' && (
+          <>
+            <Link to="/login" className="profileButton">Login</Link>
+            <Link to="/student-profile" className="profileButton">Student Profile</Link>
+          </>
+        )}
+      </nav>
     </header>
   );
 };
