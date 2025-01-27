@@ -1,0 +1,178 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right, #138a72, #226794); /* Gradient background */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the container */
+    padding: 0 15px; /* Add some padding */
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #333; /* Darker background for header */
+    color: #fff;
+    width: 100%;
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the header */
+    position: absolute; /* Change to absolute positioning */
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s; /* Smooth transition for hiding */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header .profileButton {
+    background-color: #ff6f61; /* Accent color for button */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: fixed; /* Change to fixed positioning */
+    top: 15px; /* Adjust vertical position */
+    right: 30px; /* Adjust horizontal position */
+}
+
+.header .profileButton:hover {
+    background-color: #ff4c3b; /* Darker shade on hover */
+}
+
+/* Login Styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3c3c3c; /* Dark background for login container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 400px;
+    margin: auto;
+    border: 2px solid #007bff; /* Accent border color */
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.login-container input {
+    margin: 10px 0;
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+    border: 2px solid #555; /* Lighter dark border */
+    border-radius: 5px;
+    background-color: #4c4c4c; /* Lighter dark background for input */
+    color: #e0e0e0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.login-container input:focus {
+    border-color: #007bff; /* Accent color on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styles */
+button, .menu-button, .profileButton {
+    background-color: #ff6f61; /* Contrasting color for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+}
+
+button:hover, .menu-button:hover, .profileButton:hover {
+    background-color: #ff4c3b; /* Darker shade on hover */
+}
+
+.login-container button {
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff6f61;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid #ff6f61; /* Added border for visibility */
+}
+
+.login-container button:hover {
+    background-color: #ff4c3b;
+}
+
+/* Button Styles for Menu Items */
+.menu-button {
+    background-color: #ff6f61; /* Contrasting color for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+}
+
+.menu-button:hover {
+    background-color: #ff4c3b; /* Darker shade on hover */
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #4c4c4c; /* Lighter dark background for list items */
+    border-radius: 5px;
+    color: #e0e0e0;
+}
+
+/* Heading Styles */
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Transaction Box Styles */
+.transactionBox {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #7f8c8d;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #2c3e50;
+}
