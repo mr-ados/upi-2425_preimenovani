@@ -63,7 +63,7 @@ const StudentProfile = () => {
         <>
           <p>Ime: {studentData.ime}</p>
           <p>JMBAG: {studentData.jmbag}</p>
-          <p>Stanje računa: {studentData.balance} kn</p>
+          <p>Stanje računa: {studentData.balance} eur</p>
           <h2>Povijest transakcija</h2>
           <div className="transactionBox">
             <ul>
@@ -72,7 +72,7 @@ const StudentProfile = () => {
                   .reverse()
                   .map((txnId) => (
                     <li key={txnId}>
-                      <p>Iznos: {studentData.transactions[txnId].amount} kn</p>
+                      <p>Iznos: {studentData.transactions[txnId].amount} eur</p>
                       <p>Datum: {studentData.transactions[txnId].date}</p>
                       <p>Opis: {studentData.transactions[txnId].description}</p>
                     </li>

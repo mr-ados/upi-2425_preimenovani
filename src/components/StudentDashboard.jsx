@@ -85,10 +85,10 @@ const StudentDashboard = () => {
           <div key={menzaKey}>
             <h2>{`Menza ${menzaKey}`}</h2>
             <ul>
-              <li>{`Desert: ${menzaData[menzaKey].desert} - Cijena: ${menuItems.desert?.[menzaData[menzaKey].desert]?.cijena || 0} kn`}</li>
-              <li>{`Glavno Jelo: ${menzaData[menzaKey].glavnoJelo} - Cijena: ${menuItems.glavnaJela?.[menzaData[menzaKey].glavnoJelo]?.cijena || 0} kn`}</li>
-              <li>{`Piće: ${menzaData[menzaKey].pice} - Cijena: ${menuItems.pice?.[menzaData[menzaKey].pice]?.cijena || 0} kn`}</li>
-              <li>{`Predjelo: ${menzaData[menzaKey].predjelo} - Cijena: ${menuItems.predjela?.[menzaData[menzaKey].predjelo]?.cijena || 0} kn`}</li>
+              <li>{`Desert: ${menzaData[menzaKey].desert} - Cijena: ${menuItems.desert?.[menzaData[menzaKey].desert]?.cijena || 0} eur`}</li>
+              <li>{`Glavno Jelo: ${menzaData[menzaKey].glavnoJelo} - Cijena: ${menuItems.glavnaJela?.[menzaData[menzaKey].glavnoJelo]?.cijena || 0} eur`}</li>
+              <li>{`Piće: ${menzaData[menzaKey].pice} - Cijena: ${menuItems.pice?.[menzaData[menzaKey].pice]?.cijena || 0} eur`}</li>
+              <li>{`Predjelo: ${menzaData[menzaKey].predjelo} - Cijena: ${menuItems.predjela?.[menzaData[menzaKey].predjelo]?.cijena || 0} eur`}</li>
             </ul>
             <button onClick={() => handlePurchase(menzaKey)}>Kupi meni</button>
           </div>
