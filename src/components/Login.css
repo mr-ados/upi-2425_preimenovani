@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to right, #138a72, #226794); /* Gradient background */
+    background: linear-gradient(to bottom right, #00f, #00a, #005, #002); /* Rainbow gradient background */
     color: #e0e0e0; /* Light text color */
 }
 
@@ -61,13 +61,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #3c3c3c; /* Dark background for login container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 40px;
     max-width: 400px;
-    margin: auto;
+    margin: 100px auto; /* Center the login container with margin */
     border: 2px solid #007bff; /* Accent border color */
 }
 
